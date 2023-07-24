@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1Ie-G8-sWF" customClass="HomeContentView" customModule="SwiftBrowser" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A31-zS-ipA">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_log" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-EK-DJ6">
+                            <rect key="frame" x="16.666666666666657" y="0.0" width="360" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ZLl-EK-DJ6" secondAttribute="height" multiplier="9:5" id="1Hk-zG-XRJ"/>
+                            </constraints>
+                        </imageView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vrP-oK-tg4">
+                            <rect key="frame" x="16" y="210" width="361" height="549"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="da8-Lr-gO8">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <cells/>
+                            <connections>
+                                <outlet property="dataSource" destination="1Ie-G8-sWF" id="Cqk-v4-ITp"/>
+                                <outlet property="delegate" destination="1Ie-G8-sWF" id="dPV-gM-qIO"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ZLl-EK-DJ6" firstAttribute="leading" secondItem="A31-zS-ipA" secondAttribute="leading" constant="16.670000000000002" id="1cA-4i-1Bd"/>
+                        <constraint firstAttribute="bottom" secondItem="vrP-oK-tg4" secondAttribute="bottom" id="7zD-VS-ID7"/>
+                        <constraint firstItem="vrP-oK-tg4" firstAttribute="leading" secondItem="A31-zS-ipA" secondAttribute="leading" constant="16" id="Er0-bR-ren"/>
+                        <constraint firstAttribute="trailing" secondItem="ZLl-EK-DJ6" secondAttribute="trailing" constant="16.329999999999998" id="gZ1-mY-wgk"/>
+                        <constraint firstAttribute="trailing" secondItem="vrP-oK-tg4" secondAttribute="trailing" constant="16" id="ijx-qG-toz"/>
+                        <constraint firstItem="vrP-oK-tg4" firstAttribute="top" secondItem="ZLl-EK-DJ6" secondAttribute="bottom" constant="10" id="uFO-9B-LH8"/>
+                        <constraint firstItem="ZLl-EK-DJ6" firstAttribute="top" secondItem="A31-zS-ipA" secondAttribute="top" id="yUZ-Ra-DHE"/>
+                    </constraints>
+                </view>
+                <wkWebView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oe2-1c-CsN">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" red="0.047058823530000002" green="0.098039215690000001" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="2i0-yM-ehw"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Oe2-1c-CsN" firstAttribute="leading" secondItem="2i0-yM-ehw" secondAttribute="leading" id="8Z3-RL-yhR"/>
+                <constraint firstItem="A31-zS-ipA" firstAttribute="trailing" secondItem="2i0-yM-ehw" secondAttribute="trailing" id="8h6-Um-ftN"/>
+                <constraint firstItem="Oe2-1c-CsN" firstAttribute="top" secondItem="2i0-yM-ehw" secondAttribute="top" id="B5c-TW-4TG"/>
+                <constraint firstItem="2i0-yM-ehw" firstAttribute="bottom" secondItem="A31-zS-ipA" secondAttribute="bottom" id="ELG-BL-XnK"/>
+                <constraint firstItem="Oe2-1c-CsN" firstAttribute="trailing" secondItem="2i0-yM-ehw" secondAttribute="trailing" id="Iym-uv-sHa"/>
+                <constraint firstItem="Oe2-1c-CsN" firstAttribute="bottom" secondItem="2i0-yM-ehw" secondAttribute="bottom" id="f8B-vX-yYZ"/>
+                <constraint firstItem="A31-zS-ipA" firstAttribute="leading" secondItem="2i0-yM-ehw" secondAttribute="leading" id="kaF-Ic-8Hw"/>
+                <constraint firstItem="A31-zS-ipA" firstAttribute="top" secondItem="2i0-yM-ehw" secondAttribute="top" id="nnz-6o-zIP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="vrP-oK-tg4" id="4cZ-aq-jHF"/>
+                <outlet property="navigationView" destination="A31-zS-ipA" id="uYO-kb-uHV"/>
+                <outlet property="webView" destination="Oe2-1c-CsN" id="8v6-ys-xwM"/>
+            </connections>
+            <point key="canvasLocation" x="-112" y="-295"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_log" width="360" height="200"/>
+    </resources>
+</document>
