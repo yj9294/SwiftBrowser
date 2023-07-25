@@ -33,7 +33,7 @@ class CleanVC: UIViewController {
             dismiss()
         }
         if progress > 0.3, GADUtil.share.isLoadedIngerstitalAD() {
-            duration = 0.1
+            duration = 0.01
         }
     }
 

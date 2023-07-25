@@ -82,18 +82,20 @@ class HomeVC: UIViewController {
             if let ad = noti.object as? NativeADModel {
                 if self.homeViewAppear, BrowserUtil.shared.webItem.isNavigation {
                     if abs(self.homeAdImpressionTime.timeIntervalSinceNow) > 10 {
+                        self.homeAdImpressionTime = Date()
                         self.homeAdView.nativeAd = ad.nativeAd
                     } else {
-                        debugPrint("[AD] (native) home原生广告刷新间隔10s")
+                        NSLog("[AD] (native) home原生广告刷新间隔10s")
                     }
                 } else {
                     self.homeAdView.nativeAd = .none
                 }
                 if self.tabViewAppear {
                     if abs(self.tabAdImpressionTime.timeIntervalSinceNow) > 10 {
+                        self.tabAdImpressionTime = Date()
                         self.tabAdView.nativeAd = ad.nativeAd
                     } else {
-                        debugPrint("[AD] (native) tab原生广告刷新间隔10s")
+                        NSLog("[AD] (native) tab原生广告刷新间隔10s")
                     }
                 } else {
                     self.tabAdView.nativeAd = .none
